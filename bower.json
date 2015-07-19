@@ -1,6 +1,6 @@
 {
   "name": "angular-loan-calculator-service",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "authors": [
     "ThePFMind <thepfmind@gmail.com>"
   ],
@@ -22,4 +22,7 @@
   "dependencies": {
     "angular": "1.3.13"
   },
+  "_source": "git@github.com:ThePFMind/angular-loan-calculator-service.git",
+  "_target": "0.1.0",
+  "_originalSource": "ThePFMind/angular-loan-calculator-service"
 }
