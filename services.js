@@ -1,4 +1,4 @@
-(function (window, angular, undefined) {
+(function (angular) {
     'use strict';
 
     angular.module('savePumpkin.loanCalc', ['ng'])
@@ -69,4 +69,4 @@
             };
         })
 
-};
+});
