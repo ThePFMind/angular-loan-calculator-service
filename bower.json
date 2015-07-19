@@ -5,7 +5,7 @@
     "ThePFMind <thepfmind@gmail.com>"
   ],
   "description": "Angular Loan Calculator Services",
-  "main": "services.js",
+  "main": "./loan-calculator.js",
   "keywords": [
     "load",
     "calculator",
