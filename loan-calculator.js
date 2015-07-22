@@ -43,22 +43,29 @@ angular.module('ThePFMind.loanCalculator', [])
                 return principal * f2 / g2;
             },
             perpareInterestRates: function (interestRates, term) {
-                var interestRatesCopy = interestRates.slice();
                 var totalMonths = 12 * term;
+                var interestRatesCopy = [];
+                angular.copy(interestRates, interestRatesCopy);
                 interestRatesCopy.map(function (r, i, a) {
                     if (totalMonths == 0) {
-                        a.splice(i, 1);
+                        a[i].months = 0;
                     } else {
                         totalMonths = totalMonths - parseFloat(r.months);
                         if (totalMonths < 0) {
                             a[i].months = parseFloat(totalMonths) + parseFloat(a[i].months);
                             totalMonths = 0;
                         }
-                        if (i == a.length - 1) {
+                        if (i == a.length - 1 && totalMonths > 0) {
                             a[i].months = parseFloat(totalMonths) + parseFloat(a[i].months);
                         }
                     }
                 });
+
+                // remove months = 0;
+                interestRatesCopy = interestRatesCopy.filter(function (e) {
+                    return e.months > 0;
+                });
+
                 return interestRatesCopy;
             },
             calculate: function (principal, interestRates, term, callback) {
